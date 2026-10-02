@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block title %}Trip Planner | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div>
+    <span class="eyebrow">Trip planner</span>
+    <h1>Smart trip suggestion planner</h1>
+  </div>
+</section>
+
+<section class="planner-layout">
+  <div class="planner-form-card">
+    <form class="planner-form" data-planner="trip">
+      <label>
+        <span>Total budget (₹)</span>
+        <input type="number" name="total_budget" min="1000" step="1000" value="45000" required />
+      </label>
+      <label>
+        <span>Destination</span>
+        <input type="text" name="destination" value="Goa" required />
+      </label>
+      <label>
+        <span>Trip type</span>
+        <input type="text" name="trip_type" value="Beach getaway" required />
+      </label>
+      <label>
+        <span>Number of travelers</span>
+        <input type="number" name="travelers" min="1" value="2" required />
+      </label>
+      <label>
+        <span>Number of days</span>
+        <input type="number" name="days" min="1" value="4" required />
+      </label>
+      <label>
+        <span>Season</span>
+        <input type="text" name="season" value="Summer" required />
+      </label>
+      <label>
+        <span>Travel style</span>
+        <input type="text" name="travel_style" value="Budget-friendly" required />
+      </label>
+      <label>
+        <span>Preferences</span>
+        <textarea name="preferences" rows="4" required>Beach, local food, sightseeing, relaxed walking tours</textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Generate trip suggestions</button>
+    </form>
+  </div>
+
+  <div id="planner-result" class="result-panel">
+    <p class="empty-state">Your trip ideas and budget plan will appear here.</p>
+  </div>
+</section>
+{% endblock %}

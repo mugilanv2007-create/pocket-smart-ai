@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}PocketSmart AI | Smart Budget Assistant{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">Smart travel. Memorable trips.</span>
+    <h1>Plan the right trip for your budget, style, and destination.</h1>
+    <p>
+      PocketSmart AI helps travelers compare destinations, suggest experiences, and build practical trip budgets that fit their preferences and spending limits.
+    </p>
+    <div class="cta-row">
+      {% if user %}
+        <a href="/dashboard" class="btn btn-primary">Open dashboard</a>
+      {% else %}
+        <a href="/register" class="btn btn-primary">Create account</a>
+        <a href="/login" class="btn btn-secondary">Login</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="stat-grid">
+      <div class="stat">
+        <strong>4 planners</strong>
+        <span>Trip, Home, Party, Jewelry</span>
+      </div>
+      <div class="stat">
+        <strong>₹ INR</strong>
+        <span>Budget-aware suggestions</span>
+      </div>
+      <div class="stat">
+        <strong>AI</strong>
+        <span>Gemini + mock fallback</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="planner-grid">
+  <a class="planner-card" href="/planner/trip">
+    <span class="planner-tag home-tag">Trip</span>
+    <h3>Trip Suggestion Planner</h3>
+    <p>Match destination, budget, trip type, and traveler style to a smart travel recommendation.</p>
+  </a>
+  <a class="planner-card" href="/planner/home">
+    <span class="planner-tag home-tag">Home Interior</span>
+    <h3>Home Interior Planner</h3>
+    <p>Budget furniture, décor, lighting, and storage suggestions for each room.</p>
+  </a>
+  <a class="planner-card" href="/planner/party">
+    <span class="planner-tag party-tag">Party Budget</span>
+    <h3>Party Budget Planner</h3>
+    <p>Plan guest counts, food, venue, décor, and entertainment within your event budget.</p>
+  </a>
+  <a class="planner-card" href="/planner/jewelry">
+    <span class="planner-tag jewelry-tag">Jewelry</span>
+    <h3>Jewelry Planner</h3>
+    <p>Match occasion-based jewelry recommendations with outfit styling and preferences.</p>
+  </a>
+</section>
+{% endblock %}

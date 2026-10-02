@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Party Budget Planner | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div>
+    <span class="eyebrow">Party budget planner</span>
+    <h1>Event planning budget assistant</h1>
+  </div>
+</section>
+
+<section class="planner-layout">
+  <div class="planner-form-card">
+    <form class="planner-form" data-planner="party">
+      <label>
+        <span>Total budget (₹)</span>
+        <input type="number" name="total_budget" min="2000" step="1000" value="80000" required />
+      </label>
+      <label>
+        <span>Guests</span>
+        <input type="number" name="guests" min="10" value="45" required />
+      </label>
+      <label>
+        <span>Event type</span>
+        <input type="text" name="event_type" value="Birthday celebration" required />
+      </label>
+      <label>
+        <span>Venue</span>
+        <input type="text" name="venue" value="Private banquet hall" required />
+      </label>
+      <label>
+        <span>Location</span>
+        <input type="text" name="location" value="Hyderabad" required />
+      </label>
+      <label>
+        <span>Food preference</span>
+        <input type="text" name="food_preference" value="North Indian buffet" required />
+      </label>
+      <label>
+        <span>Priorities</span>
+        <textarea name="priorities" rows="3" required>Good food, smooth guest flow, stylish venue, budget-friendly decor</textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Generate party plan</button>
+    </form>
+  </div>
+
+  <div id="planner-result" class="result-panel">
+    <p class="empty-state">Your AI-generated party plan will appear here.</p>
+  </div>
+</section>
+{% endblock %}

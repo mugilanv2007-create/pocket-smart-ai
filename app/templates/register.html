@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}Register | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="auth-wrap">
+  <div class="auth-card">
+    <h2>Register</h2>
+    <p class="form-subtitle">Create your personal smart budget assistant account</p>
+
+    <form action="/register" method="post" class="auth-form">
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required />
+      </label>
+      <label>
+        <span>Password</span>
+        <input type="password" name="password" minlength="6" required />
+      </label>
+      <button type="submit" class="btn btn-primary btn-block">Create account</button>
+    </form>
+
+    <p class="switch-link">Already have an account? <a href="/login">Login here</a></p>
+  </div>
+</section>
+{% endblock %}

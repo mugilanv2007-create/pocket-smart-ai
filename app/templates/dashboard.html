@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div>
+    <span class="eyebrow">Welcome back</span>
+    <h1>{{ user.name }}'s dashboard</h1>
+  </div>
+</section>
+
+<section class="dashboard-grid">
+  <a class="metric-card" href="/planner/trip">
+    <span>Trip planner</span>
+    <strong>Travel ideas</strong>
+  </a>
+  <a class="metric-card" href="/planner/home">
+    <span>Home planner</span>
+    <strong>Interior budget</strong>
+  </a>
+  <a class="metric-card" href="/planner/party">
+    <span>Party planner</span>
+    <strong>Event spend</strong>
+  </a>
+  <a class="metric-card" href="/planner/jewelry">
+    <span>Jewelry planner</span>
+    <strong>Occasion style</strong>
+  </a>
+</section>
+
+<section class="dashboard-panel">
+  <h2>Smart planning tools</h2>
+  <div class="tool-list">
+    <div class="tool-item">
+      <h3>Trip Suggestion Planner</h3>
+      <p>Build a destination plan with budget, traveler count, trip type, and activity preferences.</p>
+      <a href="/planner/trip" class="btn btn-primary">Open planner</a>
+    </div>
+    <div class="tool-item">
+      <h3>Home Interior Planner</h3>
+      <p>Allocate your total budget across rooms, furniture, décor, and storage priorities.</p>
+      <a href="/planner/home" class="btn btn-primary">Open planner</a>
+    </div>
+    <div class="tool-item">
+      <h3>Party Budget Planner</h3>
+      <p>Organize guest strategy, venue, food, décor, and entertainment within your budget.</p>
+      <a href="/planner/party" class="btn btn-primary">Open planner</a>
+    </div>
+    <div class="tool-item">
+      <h3>Jewelry Planner</h3>
+      <p>Build styling recommendations based on occasion, metal, and outfit profile.</p>
+      <a href="/planner/jewelry" class="btn btn-primary">Open planner</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

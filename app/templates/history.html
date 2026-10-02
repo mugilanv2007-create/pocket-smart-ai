@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}History | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div>
+    <span class="eyebrow">Past decisions</span>
+    <h1>Recommendation history</h1>
+  </div>
+</section>
+
+<section class="history-panel">
+  <div id="history-container" class="history-list">
+    <p class="empty-state">Loading your recommendations...</p>
+  </div>
+</section>
+{% endblock %}

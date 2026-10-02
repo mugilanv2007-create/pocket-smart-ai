@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Jewelry Planner | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div>
+    <span class="eyebrow">Jewelry planner</span>
+    <h1>Occasion-based jewelry recommendation</h1>
+  </div>
+</section>
+
+<section class="planner-layout">
+  <div class="planner-form-card">
+    <form class="planner-form" data-planner="jewelry">
+      <label>
+        <span>Budget (₹)</span>
+        <input type="number" name="budget" min="1000" step="1000" value="50000" required />
+      </label>
+      <label>
+        <span>Occasion</span>
+        <input type="text" name="occasion" value="Wedding reception" required />
+      </label>
+      <label>
+        <span>Jewelry style</span>
+        <input type="text" name="jewelry_style" value="Classic elegant" required />
+      </label>
+      <label>
+        <span>Metal preference</span>
+        <input type="text" name="metal_preference" value="Gold" required />
+      </label>
+      <label>
+        <span>Outfit description</span>
+        <textarea name="outfit_description" rows="3" required>Ivory silk saree with gold embroidery and a deep neckline for evening events</textarea>
+      </label>
+      <label>
+        <span>Optional outfit image URL</span>
+        <input type="url" name="outfit_image_url" placeholder="https://example.com/outfit.jpg" />
+      </label>
+      <label>
+        <span>Or upload outfit image</span>
+        <input type="file" id="jewelry-image-upload" accept="image/*" />
+      </label>
+      <button type="submit" class="btn btn-primary">Generate jewelry plan</button>
+    </form>
+  </div>
+
+  <div id="planner-result" class="result-panel">
+    <p class="empty-state">Your AI-generated jewelry suggestions will appear here.</p>
+  </div>
+</section>
+{% endblock %}

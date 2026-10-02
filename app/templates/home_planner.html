@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Home Interior Planner | PocketSmart AI{% endblock %}
+
+{% block content %}
+<section class="page-header">
+  <div>
+    <span class="eyebrow">Home interior planner</span>
+    <h1>Smart home budget planner</h1>
+  </div>
+</section>
+
+<section class="planner-layout">
+  <div class="planner-form-card">
+    <form class="planner-form" data-planner="home">
+      <label>
+        <span>Total budget (₹)</span>
+        <input type="number" name="total_budget" min="1000" step="1000" value="150000" required />
+      </label>
+      <label>
+        <span>Rooms</span>
+        <input type="text" name="rooms" value="Living room, bedroom, dining area" required />
+      </label>
+      <label>
+        <span>Required items and quantities</span>
+        <textarea name="required_items" rows="4" required>2 sofas, 1 dining table, 2 study desks, 8 lights, 4 decor pieces</textarea>
+      </label>
+      <label>
+        <span>Interior style</span>
+        <input type="text" name="interior_style" value="Minimal modern" required />
+      </label>
+      <label>
+        <span>Location</span>
+        <input type="text" name="location" value="Bengaluru" required />
+      </label>
+      <label>
+        <span>Priorities</span>
+        <textarea name="priorities" rows="3" required>Affordable quality, comfortable seating, efficient storage, warm lighting</textarea>
+      </label>
+      <button type="submit" class="btn btn-primary">Generate budget plan</button>
+    </form>
+  </div>
+
+  <div id="planner-result" class="result-panel">
+    <p class="empty-state">Your AI-generated layout will appear here.</p>
+  </div>
+</section>
+{% endblock %}
