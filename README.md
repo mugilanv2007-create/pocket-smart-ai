@@ -22,12 +22,10 @@ It includes user authentication, SQLite-based recommendation history, and a Gemi
 
 ```text
 pockat-smart-ai/
-├── .env
 ├── .env.example
 ├── .gitignore
 ├── requirements.txt
 ├── README.md
-├── database.db
 ├── tests/
 │   └── test_api.py
 └── app/
@@ -70,7 +68,13 @@ pockat-smart-ai/
 
 1. Create and activate a virtual environment.
 2. Install dependencies.
-3. Update `.env` values if needed.
+3. Create your local environment file from the example and update its values:
+
+   ```powershell
+   Copy-Item .env.example .env
+   ```
+
+   Keep `.env` local; it is ignored by Git. `.env.example` contains placeholders and is safe to commit.
 4. Start the app with Uvicorn.
 
 ## Install dependencies
@@ -98,14 +102,14 @@ http://127.0.0.1:8000
 ## Gemini setup
 
 1. Create a Gemini API key in Google AI Studio.
-2. Set this environment variable or add it to `.env`:
+2. Put the key in your local `.env` file, or set `GEMINI_API_KEY` in your deployment provider's environment-variable settings:
 
 ```env
 GEMINI_API_KEY=your_key_here
 MOCK_MODE=false
 ```
 
-If the API key is empty or the request fails, the app falls back to mock demo recommendations automatically.
+Never commit your real `.env` file or API key. Keep `MOCK_MODE=true` to use demo recommendations without a key. When using Gemini, set `MOCK_MODE=false` and provide `GEMINI_API_KEY`.
 
 ## Testing
 
