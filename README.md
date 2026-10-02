@@ -74,7 +74,7 @@ pockat-smart-ai/
    Copy-Item .env.example .env
    ```
 
-   Keep `.env` local; it is ignored by Git. `.env.example` contains placeholders and is safe to commit.
+   Generate a unique secret with `.\.venv\Scripts\python.exe -c "import secrets; print(secrets.token_urlsafe(48))"` and use it as the `SECRET_KEY` value in `.env`. Keep `.env` local; it is ignored by Git. `.env.example` contains placeholders and is safe to commit.
 4. Start the app with Uvicorn.
 
 ## Install dependencies
